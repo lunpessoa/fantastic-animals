@@ -1,0 +1,20 @@
+.tooltip {
+  --t-dark: rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+
+  max-width: 170px;
+
+  padding: 0.5rem;
+
+  font-family: var(--default-font);
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: var(--white);
+
+  background-color: var(--t-dark);
+  border-radius: 0.125rem;
+  box-shadow: 0 0 0 2px var(--primary), 0 0 0 6px var(--t-dark);
+
+  z-index: 10;
+}
