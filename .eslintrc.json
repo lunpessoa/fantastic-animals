@@ -23,7 +23,6 @@
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
     "no-param-reassign": "off",
-    "import/extensions": "off",
     "func-names": ["warn", "never"],
     "max-len": ["error", { "code": 100 }]
   }
