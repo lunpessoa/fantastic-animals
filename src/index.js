@@ -4,8 +4,8 @@ import Accordion from '@/scripts/modules/accordion';
 import TabNav from '@/scripts/modules/tab-navigator';
 import Modal from '@/scripts/modules/modal';
 import Tooltip from '@/scripts/modules/tooltip';
+import Dropdown from '@/scripts/modules/dropdown';
 
-import initDropdown from '@/scripts/modules/dropdown';
 import initMobileMenu from '@/scripts/modules/mobile-menu';
 import initWorktime from '@/scripts/modules/worktime';
 
@@ -41,7 +41,9 @@ tooltip.init();
 const animateScroll = new AnimateScroll("[data-anime='scroll']");
 animateScroll.init();
 
-initDropdown();
+const dropdown = new Dropdown('[data-dropdown]');
+dropdown.init();
+
 initMobileMenu();
 initWorktime();
 
