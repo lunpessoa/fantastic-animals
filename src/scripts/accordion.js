@@ -1,15 +1,23 @@
-export default function initAccord() {
-  const accordList = document.querySelectorAll("[data-anime='accordion']  dt");
-  const activeClass = 'active';
-  if (!accordList.length) return;
-
-  function activeAccord() {
-    this.classList.toggle(activeClass);
-    this.nextElementSibling.classList.toggle(activeClass);
+export default class Accordion {
+  constructor(list) {
+    this.list = document.querySelectorAll(list);
+    this.activeClass = 'active';
   }
 
-  accordList.forEach((dt) => {
-    dt.addEventListener('click', activeAccord);
-  });
-  accordList[0].click();
+  init() {
+    if (!this.list.length) return;
+    this.toogleAccordion(this.list[0]);
+    this.addEvent();
+  }
+
+  addEvent() {
+    this.list.forEach((item) => {
+      item.addEventListener('click', () => this.toogleAccordion(item));
+    });
+  }
+
+  toogleAccordion(item) {
+    item.classList.toggle(this.activeClass);
+    item.nextElementSibling.classList.toggle(this.activeClass);
+  }
 }
