@@ -1,4 +1,4 @@
-import initNumberAnimation from '@/scripts/modules/number-animation';
+import NumberAnimation from '@/scripts/modules/number-animation';
 import getAnimals from '@/services/getAnimals.js';
 
 export default async function FetchAnimals() {
@@ -18,7 +18,8 @@ export default async function FetchAnimals() {
       numbersGrid.appendChild(animalDiv);
     });
 
-    initNumberAnimation();
+    const numberAnimation = new NumberAnimation('[data-number]', '.numeros', 'active');
+    numberAnimation.init();
   } catch (e) {
     console.error(e);
   }
