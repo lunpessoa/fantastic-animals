@@ -10,6 +10,12 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'main.js',
   },
+  resolve: {
+    extensions: ['.js', '.json', '.css', '.html'],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
+  },
   module: {
     rules: [
       {
