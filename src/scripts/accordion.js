@@ -5,9 +5,10 @@ export default class Accordion {
   }
 
   init() {
-    if (!this.list.length) return;
+    if (!this.list.length) return this;
     this.toogleAccordion(this.list[0]);
     this.addEvent();
+    return this;
   }
 
   addEvent() {

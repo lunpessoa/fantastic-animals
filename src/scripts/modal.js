@@ -8,8 +8,9 @@ export default class Modal {
   }
 
   init() {
-    if (!this.btnOpen && !this.btnClose && !this.container) return;
+    if (!this.btnOpen && !this.btnClose && !this.container) return this;
     this.addEvents();
+    return this;
   }
 
   addEvents() {
