@@ -5,9 +5,10 @@ export default class TabNav {
   }
 
   init() {
-    if (!this.menu.length && !this.content.length) return;
+    if (!this.menu.length && !this.content.length) return this;
     this.activeTab(0);
     this.addEvent();
+    return this;
   }
 
   addEvent() {
