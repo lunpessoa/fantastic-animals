@@ -1,4 +1,4 @@
-import initScrollSuave from './scripts/scroll-smooth.js';
+import SmoothScroll from './scripts/smooth-scroll';
 import initAnimaScroll from './scripts/scroll-animation.js';
 import initAccord from './scripts/accordion.js';
 import initTabNav from './scripts/tab.js';
@@ -22,7 +22,10 @@ document.body.innerHTML = contentBody.innerHTML;
 function init() {
   document.documentElement.className += ' js';
 
-  initScrollSuave();
+  const smoothScroll = new SmoothScroll("[data-scroll='smooth']  a[href^='#']");
+  smoothScroll.init();
+  console.log(smoothScroll);
+
   initAnimaScroll();
   initAccord();
   initTabNav();
