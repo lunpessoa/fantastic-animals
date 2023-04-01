@@ -1,9 +1,11 @@
+import debounce from './debounce';
+
 export default class AnimateScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowHalf = Math.floor(window.innerHeight * 0.6);
 
-    this.animate = this.animate.bind(this);
+    this.animate = debounce(this.animate.bind(this));
   }
 
   init() {
