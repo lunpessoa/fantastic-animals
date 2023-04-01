@@ -1,30 +1,41 @@
 export default class AnimateScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
-    this.windowHalf = window.innerHeight * 0.6;
+    this.windowHalf = Math.floor(window.innerHeight * 0.6);
 
-    this.animateScroll = this.animateScroll.bind(this);
+    this.animate = this.animate.bind(this);
   }
 
   init() {
     if (!this.sections.length) return this;
+    this.getDistances();
+    this.animate();
     this.addEvent();
     return this;
   }
 
   addEvent() {
-    window.addEventListener('scroll', this.animateScroll);
+    window.addEventListener('scroll', this.animate);
   }
 
-  animateScroll() {
-    this.sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const isSectionVisible = sectionTop - this.windowMetade < 0;
-      if (isSectionVisible) {
-        section.classList.add('active');
-      } else if (section.classList.contains('active')) {
-        section.classList.remove('active');
+  getDistances() {
+    this.distances = [...this.sections].map((section) => ({
+      el: section,
+      offset: section.offsetTop - this.windowHalf,
+    }));
+  }
+
+  animate() {
+    this.distances.forEach((dist) => {
+      if (window.scrollY > dist.offset) {
+        dist.el.classList.add('active');
+      } else if (dist.el.classList.contains('active')) {
+        dist.el.classList.remove('active');
       }
     });
+  }
+
+  stop() {
+    window.removeEventListener('scroll', this.animate);
   }
 }
