@@ -2,9 +2,9 @@ import SmoothScroll from './scripts/smooth-scroll';
 import Accordion from './scripts/accordion';
 import TabNav from './scripts/tab-navigator';
 import Modal from './scripts/modal';
+import Tooltip from './scripts/tooltip.js';
 
 import initAnimaScroll from './scripts/scroll-animation.js';
-import initTooltip from './scripts/tooltip.js';
 import initDropdown from './scripts/dropdown.js';
 import initMobileMenu from './scripts/mobile-menu.js';
 import initWorktime from './scripts/worktime.js';
@@ -34,8 +34,10 @@ tabNav.init();
 const modal = new Modal('[data-modal="open"]', '[data-modal="close"]', '[data-modal="container"]');
 modal.init();
 
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
+
 initAnimaScroll();
-initTooltip();
 initDropdown();
 initMobileMenu();
 initWorktime();
