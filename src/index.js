@@ -1,16 +1,16 @@
+import AnimateScroll from '@/scripts/modules/animate-scroll';
 import SmoothScroll from '@/scripts/modules/smooth-scroll';
 import Accordion from '@/scripts/modules/accordion';
 import TabNav from '@/scripts/modules/tab-navigator';
 import Modal from '@/scripts/modules/modal';
-import Tooltip from '@/scripts/modules/tooltip.js';
+import Tooltip from '@/scripts/modules/tooltip';
 
-import initAnimaScroll from '@/scripts/modules/scroll-animation.js';
-import initDropdown from '@/scripts/modules/dropdown.js';
-import initMobileMenu from '@/scripts/modules/mobile-menu.js';
-import initWorktime from '@/scripts/modules/worktime.js';
+import initDropdown from '@/scripts/modules/dropdown';
+import initMobileMenu from '@/scripts/modules/mobile-menu';
+import initWorktime from '@/scripts/modules/worktime';
 
-import FetchAnimals from '@/scripts/fetch-animals.js';
-import FetchBitcoin from '@/scripts/fetch-bitcoin.js';
+import FetchAnimals from '@/scripts/fetch-animals';
+import FetchBitcoin from '@/scripts/fetch-bitcoin';
 
 import '@/styles/index.css';
 
@@ -38,7 +38,9 @@ modal.init();
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
-initAnimaScroll();
+const animateScroll = new AnimateScroll("[data-anime='scroll']");
+animateScroll.init();
+
 initDropdown();
 initMobileMenu();
 initWorktime();
