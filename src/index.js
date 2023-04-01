@@ -1,17 +1,18 @@
-import SmoothScroll from './scripts/smooth-scroll';
-import Accordion from './scripts/accordion';
-import TabNav from './scripts/tab-navigator';
-import Modal from './scripts/modal';
-import Tooltip from './scripts/tooltip.js';
+import SmoothScroll from '@/scripts/modules/smooth-scroll';
+import Accordion from '@/scripts/modules/accordion';
+import TabNav from '@/scripts/modules/tab-navigator';
+import Modal from '@/scripts/modules/modal';
+import Tooltip from '@/scripts/modules/tooltip.js';
 
-import initAnimaScroll from './scripts/scroll-animation.js';
-import initDropdown from './scripts/dropdown.js';
-import initMobileMenu from './scripts/mobile-menu.js';
-import initWorktime from './scripts/worktime.js';
-import initFetchAnimals from './scripts/fetch-animals.js';
-import initFetchBitcoin from './scripts/fetch-bitcoin.js';
+import initAnimaScroll from '@/scripts/modules/scroll-animation.js';
+import initDropdown from '@/scripts/modules/dropdown.js';
+import initMobileMenu from '@/scripts/modules/mobile-menu.js';
+import initWorktime from '@/scripts/modules/worktime.js';
 
-import './styles/index.css';
+import FetchAnimals from '@/scripts/fetch-animals.js';
+import FetchBitcoin from '@/scripts/fetch-bitcoin.js';
+
+import '@/styles/index.css';
 
 import body from './index.html';
 
@@ -41,5 +42,6 @@ initAnimaScroll();
 initDropdown();
 initMobileMenu();
 initWorktime();
-initFetchAnimals();
-initFetchBitcoin();
+
+FetchAnimals();
+FetchBitcoin();

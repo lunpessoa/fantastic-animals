@@ -5,6 +5,13 @@
   },
   "ignorePatterns": ["dist"],
   "extends": ["airbnb-base", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/webpack.config.common.js"
+      }
+    }
+  },
   "plugins": ["prettier"],
   "overrides": [],
   "parserOptions": {

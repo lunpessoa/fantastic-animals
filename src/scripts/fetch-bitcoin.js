@@ -1,6 +1,6 @@
-import getBitcoin from '../services/getBitcoin.js';
+import getBitcoin from '@/services/getBitcoin.js';
 
-export default async function initFetchBitcoin() {
+export default async function FetchBitcoin() {
   try {
     const bitcoin = await getBitcoin();
     const bitcoinField = document.querySelector('.btc-preco');

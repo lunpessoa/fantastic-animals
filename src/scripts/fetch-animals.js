@@ -1,7 +1,7 @@
-import initNumberAnimation from './number-animation.js';
-import getAnimals from '../services/getAnimals.js';
+import initNumberAnimation from '@/scripts/modules/number-animation';
+import getAnimals from '@/services/getAnimals.js';
 
-export default async function initFetchAnimals() {
+export default async function FetchAnimals() {
   function createAnimal(animal) {
     const div = document.createElement('div');
     div.classList.add('numero-animal');
