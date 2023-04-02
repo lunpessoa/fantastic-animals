@@ -1,7 +1,9 @@
-import initNumberAnimation from './number-animation.js';
-import getAnimals from '../services/getAnimals.js';
+import NumberAnimation from '@/scripts/modules/number-animation';
+import getAnimals from '@/services/getAnimals.js';
 
-export default async function initFetchAnimals() {
+export default async function FetchAnimals() {
+  const numbersGrid = document.querySelector('.numeros-grid');
+
   function createAnimal(animal) {
     const div = document.createElement('div');
     div.classList.add('numero-animal');
@@ -9,16 +11,20 @@ export default async function initFetchAnimals() {
     return div;
   }
 
+  function putAnimals(animal) {
+    const animalDiv = createAnimal(animal);
+    numbersGrid.appendChild(animalDiv);
+  }
+
+  function animateNumbers() {
+    const numberAnimation = new NumberAnimation('[data-number]', '.numeros', 'active');
+    numberAnimation.init();
+  }
+
   try {
     const animals = await getAnimals();
-    const numbersGrid = document.querySelector('.numeros-grid');
-
-    animals.forEach((animal) => {
-      const animalDiv = createAnimal(animal);
-      numbersGrid.appendChild(animalDiv);
-    });
-
-    initNumberAnimation();
+    animals.forEach((animal) => putAnimals(animal));
+    animateNumbers();
   } catch (e) {
     console.error(e);
   }

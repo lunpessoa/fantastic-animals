@@ -5,6 +5,13 @@
   },
   "ignorePatterns": ["dist"],
   "extends": ["airbnb-base", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack/webpack.config.common.js"
+      }
+    }
+  },
   "plugins": ["prettier"],
   "overrides": [],
   "parserOptions": {
@@ -16,7 +23,6 @@
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
     "no-param-reassign": "off",
-    "import/extensions": "off",
     "func-names": ["warn", "never"],
     "max-len": ["error", { "code": 100 }]
   }

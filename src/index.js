@@ -1,16 +1,17 @@
-import initScrollSuave from './scripts/scroll-smooth.js';
-import initAnimaScroll from './scripts/scroll-animation.js';
-import initAccord from './scripts/accordion.js';
-import initTabNav from './scripts/tab.js';
-import initModal from './scripts/modal.js';
-import initTooltip from './scripts/tooltip.js';
-import initDropdown from './scripts/dropdown.js';
-import initMobileMenu from './scripts/mobile-menu.js';
-import initWorktime from './scripts/worktime.js';
-import initFetchAnimals from './scripts/fetch-animals.js';
-import initFetchBitcoin from './scripts/fetch-bitcoin.js';
+import AnimateScroll from '@/scripts/modules/animate-scroll';
+import SmoothScroll from '@/scripts/modules/smooth-scroll';
+import Accordion from '@/scripts/modules/accordion';
+import TabNav from '@/scripts/modules/tab-navigator';
+import Modal from '@/scripts/modules/modal';
+import Tooltip from '@/scripts/modules/tooltip';
+import Dropdown from '@/scripts/modules/dropdown';
+import MobileMenu from '@/scripts/modules/mobile-menu';
+import Worktime from '@/scripts/modules/worktime';
 
-import './styles/index.css';
+import FetchAnimals from '@/scripts/fetch-animals';
+import FetchBitcoin from '@/scripts/fetch-bitcoin';
+
+import '@/styles/index.css';
 
 import body from './index.html';
 
@@ -19,19 +20,34 @@ contentBody.innerHTML = body;
 
 document.body.innerHTML = contentBody.innerHTML;
 
-function init() {
-  document.documentElement.className += ' js';
+document.documentElement.className += ' js';
 
-  initScrollSuave();
-  initAnimaScroll();
-  initAccord();
-  initTabNav();
-  initModal();
-  initTooltip();
-  initDropdown();
-  initMobileMenu();
-  initWorktime();
-  initFetchAnimals();
-  initFetchBitcoin();
-}
-init();
+const smoothScroll = new SmoothScroll("[data-scroll='smooth']  a[href^='#']");
+smoothScroll.init();
+
+const accordion = new Accordion("[data-anime='accordion']  dt");
+accordion.init();
+
+const tabNav = new TabNav("[data-tab='menu'] li", "[data-tab='content'] section");
+tabNav.init();
+
+const modal = new Modal('[data-modal="open"]', '[data-modal="close"]', '[data-modal="container"]');
+modal.init();
+
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
+
+const animateScroll = new AnimateScroll("[data-anime='scroll']");
+animateScroll.init();
+
+const dropdown = new Dropdown('[data-dropdown]');
+dropdown.init();
+
+const mobileMenu = new MobileMenu("[data-menu='button']", "[data-menu='list']");
+mobileMenu.init();
+
+const worktime = new Worktime('[data-week]');
+worktime.init();
+
+FetchAnimals();
+FetchBitcoin();
