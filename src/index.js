@@ -5,8 +5,8 @@ import TabNav from '@/scripts/modules/tab-navigator';
 import Modal from '@/scripts/modules/modal';
 import Tooltip from '@/scripts/modules/tooltip';
 import Dropdown from '@/scripts/modules/dropdown';
+import MobileMenu from '@/scripts/modules/mobile-menu';
 
-import initMobileMenu from '@/scripts/modules/mobile-menu';
 import initWorktime from '@/scripts/modules/worktime';
 
 import FetchAnimals from '@/scripts/fetch-animals';
@@ -44,7 +44,9 @@ animateScroll.init();
 const dropdown = new Dropdown('[data-dropdown]');
 dropdown.init();
 
-initMobileMenu();
+const mobileMenu = new MobileMenu("[data-menu='button']", "[data-menu='list']");
+mobileMenu.init();
+
 initWorktime();
 
 FetchAnimals();
