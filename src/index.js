@@ -6,8 +6,7 @@ import Modal from '@/scripts/modules/modal';
 import Tooltip from '@/scripts/modules/tooltip';
 import Dropdown from '@/scripts/modules/dropdown';
 import MobileMenu from '@/scripts/modules/mobile-menu';
-
-import initWorktime from '@/scripts/modules/worktime';
+import Worktime from '@/scripts/modules/worktime';
 
 import FetchAnimals from '@/scripts/fetch-animals';
 import FetchBitcoin from '@/scripts/fetch-bitcoin';
@@ -47,7 +46,8 @@ dropdown.init();
 const mobileMenu = new MobileMenu("[data-menu='button']", "[data-menu='list']");
 mobileMenu.init();
 
-initWorktime();
+const worktime = new Worktime('[data-week]');
+worktime.init();
 
 FetchAnimals();
 FetchBitcoin();
