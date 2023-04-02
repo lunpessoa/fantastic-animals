@@ -1,4 +1,4 @@
-export default function outsideClick(element, eventType, callback) {
+export default function outsideClick(element, eventType, callback, activeClass = 'active') {
   const html = document.documentElement;
 
   function handleOutsideClick(event) {
@@ -7,7 +7,7 @@ export default function outsideClick(element, eventType, callback) {
     callback();
   }
 
-  if (element.classList.contains('active')) {
+  if (element.classList.contains(activeClass)) {
     setTimeout(() => html.addEventListener(eventType, handleOutsideClick));
   }
 }
