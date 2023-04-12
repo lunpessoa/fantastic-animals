@@ -1,5 +1,5 @@
 import NumberAnimation from '@/scripts/modules/number-animation';
-import getAnimals from '@/services/getAnimals.js';
+import getAnimals from '@/services/getAnimals';
 
 export default async function FetchAnimals() {
   const numbersGrid = document.querySelector('.numeros-grid');

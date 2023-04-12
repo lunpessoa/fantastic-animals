@@ -7,6 +7,7 @@ import Tooltip from '@/scripts/modules/tooltip';
 import Dropdown from '@/scripts/modules/dropdown';
 import MobileMenu from '@/scripts/modules/mobile-menu';
 import Worktime from '@/scripts/modules/worktime';
+import { SliderNav } from '@/scripts/modules/slider';
 
 import FetchAnimals from '@/scripts/fetch-animals';
 import FetchBitcoin from '@/scripts/fetch-bitcoin';
@@ -51,3 +52,8 @@ worktime.init();
 
 FetchAnimals();
 FetchBitcoin();
+
+const slider = new SliderNav('[data-slider="content"]', '[data-slider="wrapper"]', {
+  indicators: { el: '.slider__indicators', activeClass: 'indicators__item--active' },
+});
+slider.setConfig({ speed: 1.5 });
