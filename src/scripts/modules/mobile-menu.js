@@ -30,6 +30,7 @@ export default class MobileMenu {
   }
 
   toggle(event) {
+    event.preventDefault();
     if (this.isActive()) {
       this.close();
       return;

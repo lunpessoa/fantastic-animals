@@ -33,7 +33,7 @@ body:has(.modal-container.active) {
 
   padding: 2.5rem;
 
-  width: min(400px, 600px);
+  width: min(80vw, 600px);
 
   border: 0.625rem solid var(--primary);
   background-color: var(--light);
@@ -44,13 +44,11 @@ body:has(.modal-container.active) {
   top: -1.5rem;
   right: -1.5rem;
 
+  display: grid;
+  place-items: center;
+
   height: 3rem;
   aspect-ratio: 1/1;
-
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--white);
 
   border-radius: 100vw;
   background-color: var(--secondary);
@@ -78,6 +76,10 @@ body:has(.modal-container.active) {
 .modal input {
   width: 100%;
   padding: 0.7rem 0.5rem;
+
+  border: 2px solid var(--dark);
+  caret-color: var(--secondary);
+  border-radius: 0px;
 }
 
 .modal button[type='submit'] {
