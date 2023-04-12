@@ -4,9 +4,20 @@
   box-sizing: border-box;
 }
 
-:where(button, input[type="button"], input[type="submit"]) {
-  background: initial;
-  border: initial;
+:where(button, input[type='button'], input[type='submit']) {
+  background: unset;
+  border: unset;
+}
+
+:where(input[type='text'], input[type='email'], input[type='password']) {
+  background: unset;
+  border: unset;
+}
+
+:where(input[type='text'], input[type='email'], input[type='password']):focus {
+  background: unset;
+  border: unset;
+  outline: none;
 }
 
 :where(img) {

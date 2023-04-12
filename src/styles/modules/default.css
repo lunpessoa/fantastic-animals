@@ -27,7 +27,8 @@ body {
 }
 
 .menu li a {
-  display: block;
+  display: flex;
+  gap: 0.5rem;
   padding: 15px 10px;
   margin-right: 10px;
   color: var(--dark);
@@ -246,7 +247,7 @@ body {
   }
 
   .grid-section h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .menu {
@@ -256,6 +257,10 @@ body {
   .numeros-grid {
     grid-column: 1;
     grid-template-columns: 1fr;
+  }
+
+  .numeros-grid h3 {
+    font-size: 1.5rem;
   }
 
   .copy {
@@ -282,11 +287,21 @@ body {
 }
 
 [data-anime='accordion'] dt::after {
-  content: ' ⬎';
+  content: '';
+  display: inline-block;
+
+  width: 10px;
+  height: 10px;
+  aspect-ratio: 1/1;
+
+  background: url('@/assets/svgs/arrow-red.svg') no-repeat center center;
+  rotate: 90deg;
+
+  transition: rotate 200ms ease-in-out;
 }
 
 [data-anime='accordion'] dt.active::after {
-  content: ' ⬏';
+  rotate: -90deg;
 }
 
 [data-anime='accordion'] dd.active {

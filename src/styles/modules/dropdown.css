@@ -23,7 +23,7 @@
 }
 
 .dropdown-menu::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -10px;
 
@@ -38,4 +38,11 @@
 
 .dropdown-menu li a:hover {
   color: var(--white);
+}
+
+@media (max-width: 768px) {
+  [data-dropdown] .dropdown-menu {
+    display: block;
+    animation: show-up 150ms ease-in-out forwards;
+  }
 }
