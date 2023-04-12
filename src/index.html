@@ -16,7 +16,12 @@
         <li><a href="#faq">Faq</a></li>
         <li><a href="#numbers">Números</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a data-modal="open" href="login.html">Login</a></li>
+        <li>
+          <a data-modal="open" href="login.html">
+            Login
+            <img src="assets/svgs/arrow-black.svg" alt="Svg Arrow" />
+          </a>
+        </li>
       </ul>
     </nav>
     <section id="animais" class="grid-section animais" data-anime="scroll">
@@ -222,6 +227,51 @@
       </dl>
     </section>
 
+    <section class="grid-section gallery" data-slider="wrapper" data-anime="scroll">
+      <ul class="slider__indicators indicators">
+        <li class="indicators__item">
+          <img class="indicators__image" src="assets/images/slider/foto1.jpg" alt="" />
+        </li>
+        <li class="indicators__item">
+          <img class="indicators__image" src="assets/images/slider/foto2.jpg" alt="" />
+        </li>
+        <li class="indicators__item">
+          <img class="indicators__image" src="assets/images/slider/foto3.jpg" alt="" />
+        </li>
+        <li class="indicators__item">
+          <img class="indicators__image" src="assets/images/slider/foto4.jpg" alt="" />
+        </li>
+        <li class="indicators__item">
+          <img class="indicators__image" src="assets/images/slider/foto5.jpg" alt="" />
+        </li>
+        <li class="indicators__item">
+          <img class="indicators__image" src="assets/images/slider/foto6.jpg" alt="" />
+        </li>
+      </ul>
+      <div class="slider" data-slider="wrapper">
+        <ul class="slider__content" data-slider="content">
+          <li class="slider__item">
+            <img class="slider__image" src="assets/images/slider/foto1.jpg" alt="" />
+          </li>
+          <li class="slider__item">
+            <img class="slider__image" src="assets/images/slider/foto2.jpg" alt="" />
+          </li>
+          <li class="slider__item">
+            <img class="slider__image" src="assets/images/slider/foto3.jpg" alt="" />
+          </li>
+          <li class="slider__item">
+            <img class="slider__image" src="assets/images/slider/foto4.jpg" alt="" />
+          </li>
+          <li class="slider__item">
+            <img class="slider__image" src="assets/images/slider/foto5.jpg" alt="" />
+          </li>
+          <li class="slider__item">
+            <img class="slider__image" src="assets/images/slider/foto6.jpg" alt="" />
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section id="numbers" class="grid-section numeros" data-anime="scroll">
       <h1 class="titulo">Números</h1>
       <div class="numeros-grid"></div>
@@ -249,7 +299,9 @@
 
   <section class="modal-container" data-modal="container">
     <div class="modal">
-      <button data-modal="close" class="modal__btn-close">X</button>
+      <button data-modal="close" class="modal__btn-close">
+        <img src="assets/svgs/close.svg" alt="Close icon" />
+      </button>
       <form action="">
         <label for="email">Email</label>
         <input type="text" for="email" id="email" name="email" />
