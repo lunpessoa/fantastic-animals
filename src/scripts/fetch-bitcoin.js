@@ -1,4 +1,4 @@
-import getBitcoin from '@/services/getBitcoin.js';
+import getBitcoin from '@/services/getBitcoin';
 
 export default async function FetchBitcoin() {
   try {
